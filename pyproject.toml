@@ -1,0 +1,19 @@
+[project]
+name = "dufte"
+version = "0.1.0"
+description = "Dufte - Ein Python-"
+authors = []
+requires-python = ">=3.10"
+dependencies = ["plotnine>=0.12.4"]
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.poetry.scripts]
+dufte = "dufte.main:main"
+
+[tool.poetry]
+packages = [{include = "dufte", from = "src"}]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
