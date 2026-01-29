@@ -2,13 +2,13 @@ import pytest
 import pandas as pd
 from plotnine import ggplot
 
-from dufte.plots.dot_dash_plot import dot_dash_plot
-from dufte.plots.range_frame import range_frame
-from dufte.plots.slopegraph import slopegraph
-from dufte.plots.time_series import time_series
-from dufte.plots.small_multiples import small_multiples
-from dufte.plots.layered_focus import layered_focus
-from dufte.plots.sparklines import sparklines
+from plot_dufte.plots.dot_dash_plot import dot_dash_plot
+from plot_dufte.plots.range_frame import range_frame
+from plot_dufte.plots.slopegraph import slopegraph
+from plot_dufte.plots.time_series import time_series
+from plot_dufte.plots.small_multiples import small_multiples
+from plot_dufte.plots.layered_focus import layered_focus
+from plot_dufte.plots.sparklines import sparklines
 
 
 # ============ Data ============
