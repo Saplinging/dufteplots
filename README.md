@@ -1,5 +1,6 @@
 <p align="center">
-  <img alt="plot-dufte Logo" src="images/Finales_Logo_plot-dufte_WeißerHintergrund.png"><br>
+  <img src="https://raw.githubusercontent.com/Saplinging/dufte/main/images/Finales_Logo_plot-dufte_WeißerHintergrund.png" alt="plot-dufte Logo" width="500">
+  <br>
   <em>"Above all else show the data." – Edward Tufte (1983)</em>
 </p>
 
@@ -36,6 +37,3 @@ Package Index (PyPI)](https://pypi.org/project/plot-dufte).
 ```bash
 pip install plot-dufte
 ```
-
-## Credits
-- **Logo**: AI-generated
