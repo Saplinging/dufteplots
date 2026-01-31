@@ -96,6 +96,6 @@ plot = small_multiples(
 	y_label="Rate %"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

@@ -70,6 +70,6 @@ plot = range_frame(
     title="Speed of Light Measurements (Deviation from 299,000 km/s)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

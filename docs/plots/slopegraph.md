@@ -71,6 +71,6 @@ plot = slopegraph(
     title="Government Receipts as % of GDP (1970 vs 1979)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

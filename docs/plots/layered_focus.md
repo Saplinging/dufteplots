@@ -79,6 +79,6 @@ plot = layered_focus(
     title="Euro vs. Major Currencies (Contextual Layering)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

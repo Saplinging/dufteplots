@@ -59,6 +59,6 @@ plot = time_series(
     title="Atmospheric CO2 Concentration (Mauna Loa Proxy)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

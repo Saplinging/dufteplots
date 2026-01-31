@@ -66,6 +66,6 @@ plot = dot_dash_plot(
     title="Wealth & Health of Nations (Dot-Dash)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```

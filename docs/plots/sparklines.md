@@ -75,6 +75,6 @@ plot = sparklines(
     title="60-Day Currency Trends (Sparklines)"
 )
 
-# Anzeigen
-print(plot)
+# Plot anzeigen
+plot.show()
 ```
