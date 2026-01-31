@@ -1,0 +1,43 @@
+site_name: plot-dufte
+site_url: https://saplinging.github.io/dufte/
+repo_url: https://github.com/Saplinging/dufte
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: images/Logo_plot-dufte_WeißerHintergrund.png
+  language: de
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: white
+      accent: red
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Plots:
+      - Dot-Dash Plot: plots/dot_dash.md
+      - Slopegraph: plots/slopegraph.md
+      - Range Frame: plots/range_frame.md
+      - Layered Focus: plots/layered_focus.md
+      - Small Multiples: plots/small_multiples.md
+      - Sparklines: plots/sparklines.md
+      - Time Series: plots/time_series.md

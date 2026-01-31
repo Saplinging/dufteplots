@@ -1,14 +1,17 @@
 import pandas as pd
-from plotnine import ggplot, aes, geom_line, geom_point, labs, theme, element_blank
+from plotnine import aes, element_blank, geom_line, geom_point, ggplot, labs, theme
+
 from ..config_theme import (
-    tufte_theme, 
     TUFTE_DARK,
+    TUFTE_LINE_WIDTH,
     TUFTE_POINT_SIZE_MEDIUM,
-    TUFTE_LINE_SIZE
+    tufte_theme,
 )
 
 
-def time_series(df:pd.DataFrame, x_col:str, y_col:str, title:str="Time Series") -> ggplot:
+def time_series(
+    df: pd.DataFrame, x_col: str, y_col: str, title: str = "Time Series", **kwargs
+) -> ggplot:
     """
     Erstellt einen minimalistischen Linienplot mit Punkten (Tufte-Stil).
     Ideal für Zeitreihen mit wenigen Datenpunkten.
@@ -23,6 +26,8 @@ def time_series(df:pd.DataFrame, x_col:str, y_col:str, title:str="Time Series") 
         Name der Spalte für die Y-Achse (numerisch).
     title : str (Standardwert="Time Series")
         Titel des Plots.
+    **kwargs :
+        Zusätzliche Argumente für geom_point (z.B. color, alpha).
 
     Returns
     -------
@@ -32,25 +37,21 @@ def time_series(df:pd.DataFrame, x_col:str, y_col:str, title:str="Time Series") 
     """
     # Kopie des DataFrames erstellen, um Originaldaten nicht zu verändern
     df_copy = df.copy()
-    
+
+    color = kwargs.get("color", TUFTE_DARK)
+    additional_kwargs = {k: v for k, v in kwargs.items() if k != "color"}
+
     plot = (
         ggplot(df_copy, aes(x=x_col, y=y_col))
-        
         # Linie
-        + geom_line(size=TUFTE_LINE_SIZE, color=TUFTE_DARK)
-        
+        + geom_line(size=TUFTE_LINE_WIDTH, color=TUFTE_DARK)
         # Punkte
-        + geom_point(size=TUFTE_POINT_SIZE_MEDIUM, color=TUFTE_DARK)
-        
+        + geom_point(size=TUFTE_POINT_SIZE_MEDIUM, color=color, **additional_kwargs)
         # Beschriftung
         + labs(title=title, x=None, y=None)
-        
         # Tufte-Theme
         + tufte_theme()
-        + theme(
-            axis_line=element_blank(),
-            legend_position='none'
-        )
+        + theme(axis_line=element_blank(), legend_position="none")
     )
-    
+
     return plot

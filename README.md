@@ -1,6 +1,18 @@
-# dufte
+<p align="center">
+  <img alt="plot-dufte Logo" src="images/Finales_Logo_plot-dufte_WeißerHintergrund.png"><br>
+  <em>"Above all else show the data." – Edward Tufte (1983)</em>
+</p>
 
-Ein Python-Package für Tufte-inspirierte Datenvisualisierungen mit Plotnine.
+-----------------
+
+# dufte: Tufte-style Data Visualization for Python
+
+|  |  |
+| --- | --- |
+| **Testing** | [![Tests](https://github.com/Saplinging/dufte/actions/workflows/tests.yml/badge.svg)](https://github.com/Saplinging/dufte/actions/workflows/tests.yml) |
+| **Package** | [![PyPI Latest Release](https://img.shields.io/pypi/v/plot-dufte.svg)](https://pypi.org/project/plot-dufte/) [![PyPI Downloads](https://img.shields.io/pypi/dm/plot-dufte.svg?label=PyPI%20downloads)](https://pypi.org/project/plot-dufte/) |
+| **Meta** | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Python Versions](https://img.shields.io/pypi/pyversions/plot-dufte.svg)](https://pypi.org/project/plot-dufte/) |
+
 
 ## Plots
 
@@ -12,19 +24,18 @@ Ein Python-Package für Tufte-inspirierte Datenvisualisierungen mit Plotnine.
 - **Layered Focus**: Hervorhebung spezifischer Daten im Kontext
 - **Time Series**: Klare zeitliche Visualisierungen
 
-## Voraussetzungen
-
-- Python ≥ 3.10
 
 ## Installation
 
-#### 1. Repository klonen
+The source code is currently hosted on GitHub at:
+https://github.com/Saplinging/dufte
+
+Binary installers for the latest released version are available at the [Python
+Package Index (PyPI)](https://pypi.org/project/plot-dufte).
+
 ```bash
-git clone https://github.com/Saplinging/dufte.git
-cd dufte
+pip install plot-dufte
 ```
 
-#### 2. Abhängigkeiten installieren
-```bash
-poetry install
-```
+## Credits
+- **Logo**: AI-generated

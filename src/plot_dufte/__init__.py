@@ -1,19 +1,19 @@
 from .plots import (
-    range_frame,
     dot_dash_plot,
+    layered_focus,
+    range_frame,
     slopegraph,
     small_multiples,
     sparklines,
-    layered_focus,
-    time_series
+    time_series,
 )
 
 __all__ = [
-    'range_frame',
-    'dot_dash_plot',
-    'slopegraph',
-    'small_multiples',
-    'sparklines',
-    'layered_focus',
-    'time_series'
+    "range_frame",
+    "dot_dash_plot",
+    "slopegraph",
+    "small_multiples",
+    "sparklines",
+    "layered_focus",
+    "time_series",
 ]
