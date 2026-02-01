@@ -29,8 +29,12 @@
 - **Time Series**: Klare zeitliche Visualisierungen
 
 
-## Installation
+## Installation & Verwendung
 
 ```bash
 pip install plot-dufte
+```
+
+```python
+import plot_dufte
 ```
