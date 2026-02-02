@@ -45,7 +45,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import dot_dash_plot
+import dufteplots as dp
 
 # Beispieldaten
 np.random.seed(42)
@@ -59,7 +59,7 @@ df = pd.DataFrame({
 })
 
 # Dot-Dash-Plot erstellen
-plot = dot_dash_plot(
+plot = dp.dot_dash_plot(
     df,
     x_col="GDP per Capita ($)",
     y_col="Life Expectancy (Years)",

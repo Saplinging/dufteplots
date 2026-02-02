@@ -52,7 +52,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import small_multiples
+import dufteplots as dp
 
 # Beispieldaten wie im Hauptbeispiel (monatliche Arbeitslosenquote in Sektoren)
 np.random.seed(42)
@@ -85,7 +85,7 @@ dfs.append(pd.DataFrame({
 df = pd.concat(dfs)
 
 # Small Multiples erstellen
-plot = small_multiples(
+plot = dp.small_multiples(
 	df,
 	x_col="Month",
 	y_col="Rate",

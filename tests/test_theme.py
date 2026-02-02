@@ -1,4 +1,4 @@
-from plot_dufte.config_theme import tufte_theme
+from dufteplots.config_theme import tufte_theme
 
 
 def test_tufte_theme():

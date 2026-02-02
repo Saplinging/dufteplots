@@ -3,8 +3,8 @@
 
 #### 1. Repository klonen
 ```bash
-git clone https://github.com/Saplinging/dufte.git
-cd dufte
+git clone https://github.com/Saplinging/dufteplots.git
+cd dufteplots
 ```
 
 #### 2. Abhängigkeiten installieren
@@ -17,7 +17,7 @@ poetry install
 Bitte halte dich an folgende Richtlinien:
 
 ### Fehler melden & Feature Requests
-- Nutze [GitHub Issues](https://github.com/Saplinging/dufte/issues) für Bugs und Vorschläge.
+- Nutze [GitHub Issues](https://github.com/Saplinging/dufteplots/issues) für Bugs und Vorschläge.
 
 ### Code Style
 - Nutze `ruff` und `black` für Formatierung und Linting:

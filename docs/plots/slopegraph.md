@@ -45,7 +45,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 
 ```python
 import pandas as pd
-from plot_dufte import slopegraph
+import dufteplots as dp
 
 # Beispieldaten
 countries = [
@@ -63,7 +63,7 @@ for country, v70, v79 in zip(countries, y1970, y1979):
 df = pd.DataFrame(data_slope)
 
 # Slopegraph erstellen
-plot = slopegraph(
+plot = dp.slopegraph(
     df,
     category_col="Country",
     year_col="Year",

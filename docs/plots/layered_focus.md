@@ -48,7 +48,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import layered_focus
+import dufteplots as dp
 
 # Beispieldaten
 np.random.seed(42)
@@ -70,7 +70,7 @@ for curr, start in zip(currencies, start_vals):
 df = pd.DataFrame(spark_data)
 
 # Plot erstellen (EUR/USD hervorheben)
-plot = layered_focus(
+plot = dp.layered_focus(
     df,
     time_col="Day",
     value_col="Rate",

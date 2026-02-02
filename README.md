@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Saplinging/dufte/blob/main/docs/images/Logo_plot-dufte_SchwarzerHintergrund.png?raw=true">
-    <img src="https://github.com/Saplinging/dufte/blob/main/docs/images/Logo_plot-dufte_Wei%C3%9FerHintergrund.png?raw=true" alt="plot-dufte Logo">
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Saplinging/dufteplots/blob/main/docs/images/Logo_dufteplots_SchwarzerHintergrund.png?raw=true">
+    <img src="https://github.com/Saplinging/dufteplots/blob/main/docs/images/Logo_dufteplots_Wei%C3%9FerHintergrund.png?raw=true" alt="dufteplots Logo">
   </picture>
   <br>
   <em>"Above all else show the data." – Edward Tufte (1983)</em>
@@ -9,13 +9,13 @@
 
 -----------------
 
-# dufte: Tufte-style Data Visualization for Python
+# dufteplots: Tufte-style Data Visualization for Python
 
 |  |  |
 | --- | --- |
-| **Testing** | [![Tests](https://github.com/Saplinging/dufte/actions/workflows/tests.yml/badge.svg)](https://github.com/Saplinging/dufte/actions/workflows/tests.yml) |
-| **Package** | [![PyPI Latest Release](https://img.shields.io/pypi/v/plot-dufte.svg)](https://pypi.org/project/plot-dufte/) [![PyPI Downloads](https://img.shields.io/pypi/dm/plot-dufte.svg?label=PyPI%20downloads)](https://pypi.org/project/plot-dufte/) |
-| **Meta** | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Python Versions](https://img.shields.io/pypi/pyversions/plot-dufte.svg)](https://pypi.org/project/plot-dufte/) |
+| **Testing** | [![Tests](https://github.com/Saplinging/dufteplots/actions/workflows/tests.yml/badge.svg)](https://github.com/Saplinging/dufteplots/actions/workflows/tests.yml) |
+| **Package** | [![PyPI Latest Release](https://img.shields.io/pypi/v/dufteplots.svg)](https://pypi.org/project/dufteplots/) [![PyPI Downloads](https://img.shields.io/pypi/dm/dufteplots.svg?label=PyPI%20downloads)](https://pypi.org/project/dufteplots/) |
+| **Meta** | [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Python Versions](https://img.shields.io/pypi/pyversions/dufteplots.svg)](https://pypi.org/project/dufteplots/) |
 
 
 ## Plots
@@ -32,9 +32,9 @@
 ## Installation & Verwendung
 
 ```bash
-pip install plot-dufte
+pip install dufteplots
 ```
 
 ```python
-import plot_dufte
+import dufteplots as dp
 ```

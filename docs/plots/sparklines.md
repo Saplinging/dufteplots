@@ -45,7 +45,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import sparklines
+import dufteplots as dp
 
 # Beispieldaten
 np.random.seed(42)
@@ -67,7 +67,7 @@ for curr, start in zip(currencies, start_vals):
 df = pd.DataFrame(spark_data)
 
 # Sparklines erstellen
-plot = sparklines(
+plot = dp.sparklines(
     df,
     category_col="Currency",
     time_col="Day",

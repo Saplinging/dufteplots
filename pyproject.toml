@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "plot-dufte"
+name = "dufteplots"
 version = "0.1.5"
-description = "Dufte - Ein Python-Paket für Tufte-Style Plots"
+description = "dufteplots - Ein Python-Paket für Tufte-Style Plots"
 readme = "README.md"
 license = "MIT"
-repository = "https://github.com/Saplinging/dufte"
-documentation = "https://Saplinging.github.io/plot-dufte/"
-packages = [{include = "plot_dufte", from = "src"}]
+repository = "https://github.com/Saplinging/dufteplots"
+documentation = "https://saplinging.github.io/dufteplots/"
+packages = [{include = "dufteplots", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -22,7 +22,7 @@ mkdocs-material = "^9.5.0"
 mkdocstrings = {extras = ["python"], version = "^0.24.0"}
 
 [tool.poetry.scripts]
-dufte = "plot_dufte.main:main"
+dufteplots = "dufteplots.main:main"
 
 [build-system]
 requires = ["poetry-core"]

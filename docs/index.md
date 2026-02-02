@@ -1,14 +1,14 @@
 
 <p align="center">
-  <img alt="plot-dufte Logo" src="images/Logo_plot-dufte_WeißerHintergrund.png"><br>
+  <img alt="dufteplots Logo" src="images/Logo_dufteplots_WeißerHintergrund.png"><br>
   <em>"Above all else show the data." – Edward Tufte (1983)</em>
 </p>
 
 ---
 
-Willkommen zur Dokumentation von plot-dufte!
+Willkommen zur Dokumentation von dufteplots!
 
-plot-dufte ist eine Python-Bibliothek für moderne, minimalistische und anpassbare Plot-Designs nach den Tufte Designprinzipien ([The Beauty Of Data Visualization](https://www.edwardtufte.com/tufte/)).
+dufteplots ist eine Python-Bibliothek für moderne, minimalistische und anpassbare Plot-Designs nach den Tufte Designprinzipien ([The Visual Display of Quantitative Information](https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/)).
 
 ## Plots
 - [Dot-Dash Plot](plots/dot_dash.md)
@@ -22,8 +22,8 @@ plot-dufte ist eine Python-Bibliothek für moderne, minimalistische und anpassba
 ## Installation
 
 ```bash
-pip install plot-dufte
+pip install dufteplots
 ```
 
 ## Repository
-Der Code zur Bibliothek ist unter [dufte-repository](https://github.com/Saplinging/dufte) dokumentiert.
+Der Code zur Bibliothek ist unter [dufteplots-repository](https://github.com/Saplinging/dufteplots) dokumentiert.

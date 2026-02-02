@@ -44,7 +44,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import time_series
+import dufteplots as dp
 
 # Beispieldaten
 years = np.arange(1960, 2025, 5)
@@ -52,7 +52,7 @@ co2 = 315 + 1.5 * (years - 1960) + 0.01 * (years - 1960) ** 2
 df = pd.DataFrame({"Year": years, "CO2 (ppm)": co2})
 
 # Time Series Plot erstellen
-plot = time_series(
+plot = dp.time_series(
     df,
     x_col="Year",
     y_col="CO2 (ppm)",

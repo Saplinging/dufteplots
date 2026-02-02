@@ -43,7 +43,7 @@ Der folgende Beispielcode erzeugt den abgebildeten Beispieloutput.
 ```python
 import pandas as pd
 import numpy as np
-from plot_dufte import range_frame
+import dufteplots as dp
 
 # Beispieldaten
 np.random.seed(42)
@@ -63,7 +63,7 @@ df["Experiment"] = pd.Categorical(
 )
 
 # Range-Frame-Plot erstellen
-plot = range_frame(
+plot = dp.range_frame(
     df,
     x_col="Experiment",
     y_col="Velocity_Deviation",
