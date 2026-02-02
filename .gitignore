@@ -15,3 +15,4 @@ dist/
 # Project
 output/
 data/
+src/dufteplots/main.py
