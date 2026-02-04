@@ -48,7 +48,7 @@ def sparklines(
     title : str (Standardwert="Sparklines")
         Titel des Plots.
     **kwargs :
-        Zusätzliche Argumente für geom_line (z.B. color, alpha).
+        Zusätzliche Argumente für geom_line (z.B. color, alpha, font).
 
     Returns
     -------
@@ -56,6 +56,9 @@ def sparklines(
         Ein ggplot-Objekt mit den Sparklines.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     # Kopie des DataFrames erstellen, um Originaldaten nicht zu verändern
     df_copy = df.copy()
 
@@ -125,7 +128,7 @@ def sparklines(
             ha="right",
             nudge_x=-x_range * 0.05,
             size=SPARKLINE_LABEL_SIZE,
-            family=TUFTE_FONT,
+            family=font,
             color=color,
         )
         + geom_text(
@@ -134,7 +137,7 @@ def sparklines(
             ha="left",
             nudge_x=x_range * 0.05,
             size=SPARKLINE_LABEL_SIZE,
-            family=TUFTE_FONT,
+            family=font,
             color=SPARKLINE_ENDPOINT_COLOR,
         )
         + coord_cartesian(
@@ -143,7 +146,7 @@ def sparklines(
         )
         + facet_wrap(f"~{category_col}", ncol=1, scales="free_y")
         + labs(title=title)
-        + tufte_theme()
+        + tufte_theme(base_font=font)
         + theme(
             axis_text=element_blank(),
             axis_title=element_blank(),

@@ -2,9 +2,10 @@
 
 Small Multiples zeigen mehrere ähnliche Plots nebeneinander, um Vergleiche zwischen Gruppen oder Zeitpunkten zu ermöglichen, dabei teilen sich immer zwei Plots die X und Y-Achse.
 
----
 
-![Beispiel Small Multiples](../images/small_multiples.png)
+![Beispiel Small Multiples](../images/small_multiples.png){: style="height:450px; display:block; margin:0 auto"}
+
+
 
 ---
 

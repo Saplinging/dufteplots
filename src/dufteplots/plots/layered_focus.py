@@ -1,5 +1,14 @@
 import pandas as pd
-from plotnine import aes, element_blank, geom_line, geom_text, ggplot, labs, theme
+from plotnine import (
+    aes,
+    coord_cartesian,
+    element_blank,
+    geom_line,
+    geom_text,
+    ggplot,
+    labs,
+    theme,
+)
 
 from ..config_theme import (
     TUFTE_FONT,
@@ -39,6 +48,8 @@ def layered_focus(
         Name der Kategorie, welche hervorgehoben werden soll.
     title : str (Standardwert="Layering & Separation (Context vs. Focus)")
         Titel des Plots.
+    **kwargs :
+        Zusätzliche Argumente für geom_line (z.B. color, alpha, font).
 
     Returns
     -------
@@ -46,6 +57,9 @@ def layered_focus(
         Ein ggplot-Objekt mit dem Layering-Plot.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     # Kopie des DataFrames erstellen, um Originaldaten nicht zu verändern
     df_copy = df.copy()
 
@@ -57,6 +71,10 @@ def layered_focus(
     end_time = df_focus[time_col].max()
     end_point = df_focus[df_focus[time_col] == end_time].copy()
     end_point["label_text"] = focus_category
+
+    # X-Achse erweitern für Label-Platz
+    x_max = df_copy[time_col].max()
+    x_range = x_max - df_copy[time_col].min()
 
     # Fokus Farbe
     focus_color = kwargs.get("color", TUFTE_RED)
@@ -82,12 +100,14 @@ def layered_focus(
             nudge_x=0.5,
             size=10,
             color=focus_color,
-            family=TUFTE_FONT,
+            family=font,
         )
         # Beschriftung
         + labs(title=title, x=time_col, y=value_col)
+        # X-Achse erweitern für Label
+        + coord_cartesian(xlim=(None, x_max + x_range * 0.1))
         # Tufte-Theme
-        + tufte_theme()
+        + tufte_theme(base_font=font)
         + theme(axis_line=element_blank())
     )
 

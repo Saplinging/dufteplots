@@ -2,9 +2,9 @@
 
 Sparklines sind kleine, inline dargestellte Zeitreihenplots, die Trends oder Muster auf kleinstem Raum zeigen.
 
----
 
-![Beispiel Sparkline](../images/sparklines.png)
+![Beispiel Sparkline](../images/sparklines.png){: style="height:450px; display:block; margin:0 auto"}
+
 
 ---
 
@@ -55,8 +55,8 @@ def generate_random_walk(start_price, n, volatility=0.01):
     return price_path
 
 n_days = 60
-currencies = ["EUR/USD", "GBP/USD", "JPY/USD", "CHF/USD", "AUD/USD"]
-start_vals = [1.10, 1.30, 0.009, 1.05, 0.70]
+currencies = ["EUR/USD", "GBP/USD", "CHF/USD", "AUD/USD"]
+start_vals = [1.10, 1.30, 1.05, 0.70]
 
 spark_data = []
 for curr, start in zip(currencies, start_vals):

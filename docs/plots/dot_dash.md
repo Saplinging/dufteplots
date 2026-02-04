@@ -1,10 +1,11 @@
 # Dot-Dash Plot
 
+
 Ein Dot-Dash Plot ist ein minimalistischer Scatterplot mit Randverteilungen statt Achsenlinien.
 
---- 
 
-![Beispiel Dot-Dash Plot](../images/dot_dash_plot.png)
+![Beispiel Dot-Dash Plot](../images/dot_dash_plot.png){: style="height:450px; display:block; margin:0 auto"}
+
 
 ---
 

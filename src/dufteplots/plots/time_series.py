@@ -3,6 +3,7 @@ from plotnine import aes, element_blank, geom_line, geom_point, ggplot, labs, th
 
 from ..config_theme import (
     TUFTE_DARK,
+    TUFTE_FONT,
     TUFTE_LINE_WIDTH,
     TUFTE_POINT_SIZE_MEDIUM,
     tufte_theme,
@@ -27,7 +28,7 @@ def time_series(
     title : str (Standardwert="Time Series")
         Titel des Plots.
     **kwargs :
-        Zusätzliche Argumente für geom_point (z.B. color, alpha).
+        Zusätzliche Argumente für geom_point (z.B. color, alpha, font).
 
     Returns
     -------
@@ -35,6 +36,9 @@ def time_series(
         Ein ggplot-Objekt mit dem Linienplot.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     # Kopie des DataFrames erstellen, um Originaldaten nicht zu verändern
     df_copy = df.copy()
 
@@ -50,7 +54,7 @@ def time_series(
         # Beschriftung
         + labs(title=title, x=None, y=None)
         # Tufte-Theme
-        + tufte_theme()
+        + tufte_theme(base_font=font)
         + theme(axis_line=element_blank(), legend_position="none")
     )
 

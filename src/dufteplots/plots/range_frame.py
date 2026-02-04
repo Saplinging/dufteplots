@@ -1,7 +1,13 @@
 import pandas as pd
 from plotnine import aes, element_blank, geom_point, geom_segment, ggplot, labs, theme
 
-from ..config_theme import TUFTE_DARK, TUFTE_GREY, TUFTE_POINT_SIZE_MEDIUM, tufte_theme
+from ..config_theme import (
+    TUFTE_DARK,
+    TUFTE_FONT,
+    TUFTE_GREY,
+    TUFTE_POINT_SIZE_MEDIUM,
+    tufte_theme,
+)
 
 
 def range_frame(
@@ -22,7 +28,7 @@ def range_frame(
     title : str (Standardwert="Range-Frame Plot")
         Titel des Plots.
     **kwargs :
-        Zusätzliche Argumente für geom_point (z.B. color, alpha).
+        Zusätzliche Argumente für geom_point (z.B. color, alpha, font).
 
     Returns
     -------
@@ -30,6 +36,9 @@ def range_frame(
         Ein ggplot-Objekt mit dem Range-Frame-Plot.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     # Berechnung der benötigten Statistiken
     stats = (
         df.groupby(x_col)[y_col]
@@ -76,6 +85,6 @@ def range_frame(
         labs(title=title, x=None, y=y_col)
         +
         # Tufte-Theme
-        tufte_theme()
+        tufte_theme(base_font=font)
         + theme(axis_line=element_blank(), axis_ticks=element_blank())
     )

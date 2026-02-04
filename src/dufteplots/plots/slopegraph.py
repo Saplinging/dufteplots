@@ -45,7 +45,7 @@ def slopegraph(
     title : str (Standardwert="Slopegraph")
         Titel des Plots.
     **kwargs :
-        Zusätzliche Argumente für geom_line (z.B. color, alpha).
+        Zusätzliche Argumente für geom_line (z.B. color, alpha, font).
 
     Returns
     -------
@@ -53,6 +53,8 @@ def slopegraph(
         Ein ggplot-Objekt mit dem Slopegraph.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
 
     # Kopie des DataFrames erstellen, um Originaldaten nicht zu verändern
     df_copy = df.copy()
@@ -91,7 +93,7 @@ def slopegraph(
             ha="right",
             nudge_x=-0.05,
             size=TUFTE_FONT_PLOT_SIZE * 0.8,
-            family=TUFTE_FONT,
+            family=font,
             color=color,
         )
         # Rechte Labels
@@ -101,13 +103,13 @@ def slopegraph(
             ha="left",
             nudge_x=0.05,
             size=TUFTE_FONT_PLOT_SIZE * 0.8,
-            family=TUFTE_FONT,
+            family=font,
             color=color,
         )
         # Beschriftung
         + labs(title=title)
         # Tufte-Theme
-        + tufte_theme()
+        + tufte_theme(base_font=font)
         + theme(
             axis_text_y=element_blank(),
             axis_title=element_blank(),

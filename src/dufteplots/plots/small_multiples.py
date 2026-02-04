@@ -38,7 +38,7 @@ def small_multiples(
     y_label : str
         Beschriftung der Y-Achse.
     **kwargs :
-        Zusätzliche Argumente für geom_line (z.B. color, alpha).
+        Zusätzliche Argumente für geom_line (z.B. color, alpha, font).
 
     Returns
     -------
@@ -46,6 +46,9 @@ def small_multiples(
         Ein ggplot-Objekt mit den kleinen Mehrfachplots.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     line_color = kwargs.get("color", TUFTE_DARK)
     additional_kwargs = {k: v for k, v in kwargs.items() if k != "color"}
 
@@ -62,15 +65,13 @@ def small_multiples(
         labs(title=title or "Small Multiples", x=x_label, y=y_label)
         +
         # Tufte-Theme
-        tufte_theme()
+        tufte_theme(base_font=font)
         + theme(
             panel_spacing_x=0.05,
             panel_spacing_y=0.05,
-            strip_text=element_text(
-                size=10, weight="bold", ha="left", family=TUFTE_FONT
-            ),
-            axis_text_x=element_text(size=7, angle=45, hjust=1, family=TUFTE_FONT),
-            axis_text_y=element_text(size=7, family=TUFTE_FONT),
+            strip_text=element_text(size=10, weight="bold", ha="left", family=font),
+            axis_text_x=element_text(size=7, angle=45, hjust=1, family=font),
+            axis_text_y=element_text(size=7, family=font),
         )
     )
 

@@ -1,10 +1,9 @@
 # Range Frame Plot
 
+
 Ein Range-Frame Plot ist eine minimalistische Form von einem Boxplot.
 
----
-
-![Beispiel Range Frame Plot](../images/range_frame.png)
+![Beispiel Range Frame Plot](../images/range_frame.png){: style="height:450px; display:block; margin:0 auto"}
 
 ---
 

@@ -1,7 +1,7 @@
 import pandas as pd
 from plotnine import aes, element_blank, geom_point, geom_rug, ggplot, labs, theme
 
-from ..config_theme import TUFTE_DARK, TUFTE_POINT_SIZE_SMALL, tufte_theme
+from ..config_theme import TUFTE_DARK, TUFTE_FONT, TUFTE_POINT_SIZE_SMALL, tufte_theme
 
 
 def dot_dash_plot(
@@ -22,7 +22,7 @@ def dot_dash_plot(
     title : str (Standardwert="Dot-Dash Plot")
         Titel des Plots.
     **kwargs :
-        Zusätzliche Argumente für geom_point (z.B. color, alpha).
+        Zusätzliche Argumente für geom_point (z.B. color, alpha, font).
 
     Returns
     -------
@@ -30,6 +30,9 @@ def dot_dash_plot(
         Ein ggplot-Objekt mit dem Dot-Dash-Plot.
 
     """
+    # Font extrahieren
+    font = kwargs.pop("font", TUFTE_FONT)
+
     # Standardwerte, falls nicht in kwargs
     kwargs.setdefault("color", TUFTE_DARK)
     kwargs.setdefault("size", TUFTE_POINT_SIZE_SMALL)
@@ -46,7 +49,7 @@ def dot_dash_plot(
         # Beschriftung
         + labs(title=title)
         # Tufte-Theme
-        + tufte_theme()
+        + tufte_theme(base_font=font)
         + theme(axis_line=element_blank())
     )
     return plot

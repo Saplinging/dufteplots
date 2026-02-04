@@ -2,9 +2,9 @@
 
 Time Series Plots visualisieren Datenpunkte über die Zeit und eignen sich für Trendanalysen, Zeitverläufe und saisonale Muster.
 
----
+![Beispiel Time Series Plot](../images/time_series.png){: style="height:450px; display:block; margin:0 auto"}
 
-![Beispiel Time Series Plot](../images/time_series.png)
+
 
 ---
 

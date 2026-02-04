@@ -31,18 +31,21 @@ SPARKLINE_ENDPOINT_SIZE = 2.0
 SPARKLINE_LABEL_SIZE = 9
 
 
-def tufte_theme() -> theme:
+def tufte_theme(base_font: str = TUFTE_FONT) -> theme:
     """
     Minimalistisches Tufte-inspiriertes Theme für plotnine.
+
+    Parameters
+    ----------
+    base_font : str (Standardwert=TUFTE_FONT)
+        Die Schriftfamilie, die für den Plot verwendet wird.
 
     Returns
     -------
     theme: plotnine.theme
         Ein angepasstes Plotnine Theme-Objekt nach Tuftes-Designprinzipien.
     """
-    return theme_minimal(
-        base_size=TUFTE_FONT_PLOT_SIZE, base_family=TUFTE_FONT
-    ) + theme(
+    return theme_minimal(base_size=TUFTE_FONT_PLOT_SIZE, base_family=base_font) + theme(
         # Hintergrund
         plot_background=element_rect(fill="white", color=None),
         panel_background=element_rect(fill="white", color=None),
@@ -51,7 +54,7 @@ def tufte_theme() -> theme:
         # Rasterlinien
         panel_grid=element_blank(),
         # Achsen
-        axis_line=element_line(color="black", linewidth=TUFTE_LINE_WIDTH),
+        axis_line=element_blank(),
         axis_ticks=element_line(color="black", linewidth=TUFTE_LINE_WIDTH),
         axis_ticks_length=3,
         # Typografie
@@ -59,21 +62,21 @@ def tufte_theme() -> theme:
             size=TUFTE_FONT_PLOT_SIZE * 1.2,
             weight="bold",
             ha=TUFTE_TITLE_POSITION,
-            family=TUFTE_FONT,
+            family=base_font,
         ),
         axis_title=element_text(
             size=TUFTE_FONT_PLOT_SIZE * 0.9,
             face="italic",
             ha="center",
-            family=TUFTE_FONT,
+            family=base_font,
         ),
         axis_text=element_text(
-            size=TUFTE_FONT_PLOT_SIZE * 0.85, color=TUFTE_DARK, family=TUFTE_FONT
+            size=TUFTE_FONT_PLOT_SIZE * 0.85, color=TUFTE_DARK, family=base_font
         ),
         # Legende
         legend_background=element_blank(),
         legend_key=element_blank(),
         # Facetten
         strip_background=element_blank(),
-        strip_text=element_text(face="bold", ha="center", family=TUFTE_FONT),
+        strip_text=element_text(face="bold", ha="center", family=base_font),
     )

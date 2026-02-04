@@ -3,9 +3,9 @@
 
 Ein Slopegraph zeigt Veränderungen einzelner Kategorien zwischen zwei Zeitpunkten und eignet sich besonders für Vorher-Nachher-Vergleiche.
 
----
 
-![Beispiel Slopegraph](../images/slopegraph.png)
+![Beispiel Slopegraph](../images/slopegraph.png){: style="height:450px; display:block; margin:0 auto"}
+
 
 ---
 
@@ -48,11 +48,9 @@ import pandas as pd
 import dufteplots as dp
 
 # Beispieldaten
-countries = [
-    "Switzerland", "USA", "Germany", "UK", "France", "Sweden", "Japan", "Italy"
-]
-y1970 = [25.0, 31.0, 38.0, 42.0, 39.0, 46.0, 20.0, 30.0]
-y1979 = [31.0, 30.5, 43.0, 38.0, 44.0, 58.0, 26.0, 34.0]
+countries = ["Switzerland", "USA", "Germany", "Sweden", "Japan"]
+y1970 = [25.0, 31.0, 38.0, 46.0, 20.0]
+y1979 = [31.0, 33.5, 43.0, 58.0, 26.0]
 
 data_slope = []
 for country, v70, v79 in zip(countries, y1970, y1979):
