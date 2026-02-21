@@ -49,8 +49,15 @@ def time_series(
         ggplot(df_copy, aes(x=x_col, y=y_col))
         # Linie
         + geom_line(size=TUFTE_LINE_WIDTH, color=TUFTE_DARK)
-        # Punkte
-        + geom_point(size=TUFTE_POINT_SIZE_MEDIUM, color=color, **additional_kwargs)
+        # Punkte mit weißer Umrandung
+        + geom_point(
+            size=TUFTE_POINT_SIZE_MEDIUM,
+            color="white",
+            fill=color,
+            stroke=2,
+            shape="o",
+            **additional_kwargs
+        )
         # Beschriftung
         + labs(title=title, x=None, y=None)
         # Tufte-Theme

@@ -49,8 +49,8 @@ import dufteplots as dp
 
 # Beispieldaten
 countries = ["Switzerland", "USA", "Germany", "Sweden", "Japan"]
-y1970 = [25.0, 31.0, 38.0, 46.0, 20.0]
-y1979 = [31.0, 33.5, 43.0, 58.0, 26.0]
+y1970 = [32.5, 31.0, 36.0, 34.0, 29.0]
+y1979 = [31.0, 33.5, 37.0, 35.0, 30.0]
 
 data_slope = []
 for country, v70, v79 in zip(countries, y1970, y1979):
