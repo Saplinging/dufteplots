@@ -21,6 +21,8 @@ plugins:
       handlers:
         python:
           paths: [src]
+  - with-pdf:
+      output_path: docs/pdf/dufteplots_Dokumentation.pdf
 
 markdown_extensions:
   - admonition
