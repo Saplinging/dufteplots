@@ -72,6 +72,15 @@ def layered_focus(
     end_point = df_focus[df_focus[time_col] == end_time].copy()
     end_point["label_text"] = focus_category
 
+    # Endpunkte für Kontext-Labels je Kategorie ermitteln
+    context_end_points = (
+        df_context.sort_values(time_col)
+        .groupby(category_col, as_index=False)
+        .tail(1)
+        .copy()
+    )
+    context_end_points["label_text"] = context_end_points[category_col]
+
     # X-Achse erweitern für Label-Platz
     x_max = df_copy[time_col].max()
     x_range = x_max - df_copy[time_col].min()
@@ -90,9 +99,15 @@ def layered_focus(
             alpha=0.5,
             size=TUFTE_LINE_WIDTH,
         )
-        # Fokus-Linie (rot, hervorgehoben)
-        + geom_line(data=df_focus, color=focus_color, size=1.2, **additional_kwargs)
-        # Label für Fokus-Kategorie
+        + geom_text(
+            aes(label="label_text"),
+            data=context_end_points,
+            ha="left",
+            nudge_x=0.5,
+            size=10,
+            color=TUFTE_GREY,
+            family=font,
+        )
         + geom_text(
             aes(label="label_text"),
             data=end_point,
@@ -102,6 +117,8 @@ def layered_focus(
             color=focus_color,
             family=font,
         )
+        # Fokus-Linie (rot, hervorgehoben)
+        + geom_line(data=df_focus, color=focus_color, size=1.2, **additional_kwargs)
         # Beschriftung
         + labs(title=title, x=time_col, y=value_col)
         # X-Achse erweitern für Label
