@@ -47,8 +47,8 @@ def tufte_theme(base_font: str = TUFTE_FONT) -> theme:
     """
     return theme_minimal(base_size=TUFTE_FONT_PLOT_SIZE, base_family=base_font) + theme(
         # Hintergrund
-        plot_background=element_rect(fill="white", color=None),
-        panel_background=element_rect(fill="white", color=None),
+        plot_background=element_rect(fill="white", color=None, size=0),
+        panel_background=element_rect(fill="white", color=None, size=0),
         panel_border=element_blank(),
         plot_margin=0.025,
         # Rasterlinien
